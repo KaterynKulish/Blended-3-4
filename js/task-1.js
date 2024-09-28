@@ -11,7 +11,6 @@
 // console.log(findFirstOccurrence('Hello, world!', 'JavaScript')); // -1
 // console.log(findFirstOccurrence('Hello, world!', 'Hello')); // 0
 
-
 // Написати функцію getSubstring, яка приймає три аргументи: рядок str,
 // індекс початку start та індекс кінця end.
 // Функція повинна повертати підрядок, що починається з індексу start
@@ -30,14 +29,13 @@
 // Функція повинна повертати частину рядка, що йде після першого входження підрядка.
 // Якщо підрядок не знайдено, функція повинна повертати порожній рядок.
 
-
 // function extractAfterSubstring(str, substr) {
 //   const index = str.indexOf(substr);
 //   if (index === -1) {
 //     return "";
 //   } else {
 //     return str.slice(index + substr.length);
-//   }  
+//   }
 // }
 
 //   function extractAfterSubstring(str, substr) {
@@ -48,10 +46,6 @@
 // console.log(extractAfterSubstring('Hello, world!', 'world')) // "!"
 // console.log(extractAfterSubstring('Hello, world!', 'JavaScript')) // ""
 // console.log(extractAfterSubstring('Hello, world!', 'Hello')) // ", world!"
-
-
-
-
 
 //
 //
@@ -69,17 +63,16 @@
 //   }
 // }
 
-function removeSubstring (str, substr) {
-   const index = str.indexOf(substr);
-   return index === -1 ? str : str.slice(0,index) + str.slice(index + substr.length);
-}
+// function removeSubstring(str, substr) {
+//   const index = str.indexOf(substr);
+//   return index === -1
+//     ? str
+//     : str.slice(0, index) + str.slice(index + substr.length);
+// }
 
-
-
-
-console.log(removeSubstring('Hello, world!', 'world')) // "Hello, !"
-console.log(removeSubstring('Hello, world!', 'JavaScript')) // "Hello, world!"
-console.log(removeSubstring('Hello, world!', 'Hello')) // ", world!"
+// console.log(removeSubstring('Hello, world!', 'world')); // "Hello, !"
+// console.log(removeSubstring('Hello, world!', 'JavaScript')); // "Hello, world!"
+// console.log(removeSubstring('Hello, world!', 'Hello')); // ", world!"
 //
 // Написати функцію extractBetween, яка приймає три аргументи:
 // рядок str, підрядок start і підрядок end.Функція повинна повертати частину рядка
@@ -93,7 +86,20 @@ console.log(removeSubstring('Hello, world!', 'Hello')) // ", world!"
 //   яка приймає рядок str і повертає новий рядок,
 //     у якому з кожного слова видалені всі голосні букви.
 
-// const vowels = 'aeiouAEIOU'
+const vowels = 'aeiouAEIOU';
+function removeVowelsFromWords(str) {
+  let newStr = '';
+  for (let i = 0; i < str.length; i++) {
+    if (!vowels.includes(str[i])) {
+      newStr += str[i];
+    }
+  }
+  return newStr;
+}
+
+console.log(removeVowelsFromWords('Hello, world!')); // "Hll, wrld!"
+console.log(removeVowelsFromWords('JavaScript is awesome!')); // "JvScrpt s wsm!"
+console.log(removeVowelsFromWords('Remove vowels from words')); // "Rmv vwls frm wrds"
 
 //
 //
