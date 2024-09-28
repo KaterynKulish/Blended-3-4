@@ -1,22 +1,30 @@
+'use strict';
 // Написати функцію findFirstOccurrence, яка приймає два аргументи: рядок str і підрядок substr.
 //  Функція повинна повертати індекс першого входження підрядка в рядок.
 //  Якщо підрядок не знайдено, функція повинна повертати - 1.
 
-function findFirstOccurrence(str, substr) {
-  return str.indexOf(substr);
-}
+// function findFirstOccurrence(str, substr) {
+//   return str.indexOf(substr);
+// }
 
-console.log(findFirstOccurrence('Hello, world!', 'world')); // 7
-console.log(findFirstOccurrence('Hello, world!', 'JavaScript')); // -1
-console.log(findFirstOccurrence('Hello, world!', 'Hello')); // 0
-//
+// console.log(findFirstOccurrence('Hello, world!', 'world')); // 7
+// console.log(findFirstOccurrence('Hello, world!', 'JavaScript')); // -1
+// console.log(findFirstOccurrence('Hello, world!', 'Hello')); // 0
+
+
 // Написати функцію getSubstring, яка приймає три аргументи: рядок str,
 // індекс початку start та індекс кінця end.
 // Функція повинна повертати підрядок, що починається з індексу start
 // і закінчується індексом end(не включаючи його).
 
-//
-//
+function getSubstring(str, start, end) {
+  return str.slice(start, end);
+}
+
+console.log(getSubstring('Hello, world!', 7, 12)) // "world"
+console.log(getSubstring('JavaScript', 4, 10)) // "Script"
+console.log(getSubstring('Slice method', 0, 5)) // "Slice"
+
 // Написати функцію extractAfterSubstring,
 // яка приймає два аргументи: рядок str і підрядок substr.
 // Функція повинна повертати частину рядка, що йде після першого входження підрядка.
