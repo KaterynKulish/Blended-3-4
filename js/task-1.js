@@ -17,20 +17,42 @@
 // Функція повинна повертати підрядок, що починається з індексу start
 // і закінчується індексом end(не включаючи його).
 
-function getSubstring(str, start, end) {
-  return str.slice(start, end);
-}
+// function getSubstring(str, start, end) {
+//   return str.slice(start, end);
+// }
 
-console.log(getSubstring('Hello, world!', 7, 12)) // "world"
-console.log(getSubstring('JavaScript', 4, 10)) // "Script"
-console.log(getSubstring('Slice method', 0, 5)) // "Slice"
+// console.log(getSubstring('Hello, world!', 7, 12)) // "world"
+// console.log(getSubstring('JavaScript', 4, 10)) // "Script"
+// console.log(getSubstring('Slice method', 0, 5)) // "Slice"
 
 // Написати функцію extractAfterSubstring,
 // яка приймає два аргументи: рядок str і підрядок substr.
 // Функція повинна повертати частину рядка, що йде після першого входження підрядка.
 // Якщо підрядок не знайдено, функція повинна повертати порожній рядок.
 
-//
+
+// function extractAfterSubstring(str, substr) {
+//   const index = str.indexOf(substr);
+//   if (index === -1) {
+//     return "";
+//   } else {
+//     return str.slice(index + substr.length);
+//   }  
+// }
+
+  function extractAfterSubstring(str, substr) {
+  const index = str.indexOf(substr);
+  return index === -1 ? "" : str.slice(index + substr.length);
+  }
+
+console.log(extractAfterSubstring('Hello, world!', 'world')) // "!"
+console.log(extractAfterSubstring('Hello, world!', 'JavaScript')) // ""
+console.log(extractAfterSubstring('Hello, world!', 'Hello')) // ", world!"
+
+
+
+
+
 //
 //
 // Написати функцію removeSubstring, яка приймає два аргументи:
